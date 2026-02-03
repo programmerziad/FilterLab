@@ -20,20 +20,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobile-menu");
   const navLinks = document.querySelectorAll(".nav-link");
 
+  // جلب الأيقونات
+  const hamburgerIcon = document.getElementById("hamburger-icon");
+  const closeIcon = document.getElementById("close-icon");
+
+  function toggleIcons(isOpen) {
+    if (isOpen) {
+      // حالة فتح المنيو (تظهر الـ X الحمراء)
+      hamburgerIcon.classList.add("hidden");
+      closeIcon.classList.remove("hidden");
+
+      mobileMenuBtn.classList.add("hover:bg-red-50");
+      mobileMenuBtn.classList.remove("hover:bg-gray-100");
+    } else {
+      hamburgerIcon.classList.remove("hidden");
+      closeIcon.classList.add("hidden");
+
+      mobileMenuBtn.classList.remove("hover:bg-red-50");
+      mobileMenuBtn.classList.add("hover:bg-gray-100");
+    }
+  }
+
   if (mobileMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      mobileMenuBtn.setAttribute(
-        "aria-expanded",
-        mobileMenu.classList.contains("hidden") ? "false" : "true"
-      );
+      const isOpen = mobileMenu.classList.toggle("hidden");
+
+      const isMenuOpen = !mobileMenu.classList.contains("hidden");
+
+      toggleIcons(isMenuOpen);
+      mobileMenuBtn.setAttribute("aria-expanded", isMenuOpen);
     });
 
-    // Close mobile menu when clicking a nav link
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
         mobileMenuBtn.setAttribute("aria-expanded", "false");
+        toggleIcons(false);
       });
     });
   }
@@ -85,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   featureCards.forEach((card) => {
     card.addEventListener("mouseenter", () => {
-      card.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.15)";
+      card.style.boxShadow = "0 25px 50px -12px #000000";
     });
 
     card.addEventListener("mouseleave", () => {
@@ -104,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.addEventListener("mouseenter", () => {
       img.style.transform = "scale(1.05)";
-      card.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.2)";
+      card.style.boxShadow = "0 25px 50px -12px #000000";
     });
 
     card.addEventListener("mouseleave", () => {
@@ -131,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
         top: ${y}px;
         width: 0;
         height: 0;
-        background: rgba(255, 255, 255, 0.3);
+        background: #ffffff;
         border-radius: 50%;
         transform: translate(-50%, -50%);
         animation: ripple 0.6s ease-out;
