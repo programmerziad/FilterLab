@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أعمالي المختارة | مصمم فلاتر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-cairo bg-gray-50 text-gray-900 antialiased">
+    <!-- Header (copied exactly from index.html) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <span
+                        class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm font-bold shadow-md group-hover:shadow-lg transition-shadow">ك</span>
+                    <span class="text-xl font-bold text-gray-900">الكوماندا</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="index.html#home"
+                            class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">الرئيسية</a>
+                    </li>
+                    <li><a href="projects.html" class="nav-link text-blue-600 font-medium transition-colors">المعرض</a>
+                    </li>
+                    <li><a href="index.html#about"
+                            class="nav-link text-gray-700 hover:text-blue-600 font-medium transition-colors">عني</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Button - مخفي على الموبايل، يظهر الزرار العائم بدلاً منه -->
+                <a href="https://wa.me/201030442397" target="_blank" rel="noopener"
+                    class="cta-btn hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-blue-600 text-white font-semibold shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300">
+                    تواصل معي
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
+                    aria-label="القائمة">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <ul class="flex flex-col gap-4">
+                    <li><a href="index.html#home"
+                            class="nav-link block py-2 text-gray-700 hover:text-blue-600">الرئيسية</a></li>
+                    <li><a href="projects.html" class="nav-link block py-2 text-blue-600">المعرض</a></li>
+                    <li><a href="index.html#about" class="nav-link block py-2 text-gray-700 hover:text-blue-600">عني</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24 md:pt-28 lg:pt-32 pb-16 md:pb-24">
+        <!-- Portfolio Header -->
+        <section class="px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-600 mb-4">
+                    أعمالي المختارة
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
+                    استكشف مجموعة من الفلاتر والمؤثرات البصرية التي تجمع بين الإبداع والتقنية
+                    لتقديم تجارب رقمية غامرة ومميزة على مختلف منصات التواصل الاجتماعي.
+                </p>
+            </div>
+
+            <!-- Filters -->
+            <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+                <button type="button" data-filter="all"
+                    class="filter-btn px-5 py-2.5 rounded-full border text-sm md:text-base font-semibold transition-all duration-200 bg-blue-600 text-white border-blue-600 shadow-md">
+                    الكل
+                </button>
+                <button type="button" data-filter="ar"
+                    class="filter-btn px-5 py-2.5 rounded-full border text-sm md:text-base font-semibold transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:bg-blue-50 hover:border-blue-200">
+                    فلاتر AR
+                </button>
+                <button type="button" data-filter="vfx"
+                    class="filter-btn px-5 py-2.5 rounded-full border text-sm md:text-base font-semibold transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:bg-blue-50 hover:border-blue-200">
+                    مؤثرات VFX
+                </button>
+                <button type="button" data-filter="3d"
+                    class="filter-btn px-5 py-2.5 rounded-full border text-sm md:text-base font-semibold transition-all duration-200 bg-white text-gray-700 border-gray-200 hover:bg-blue-50 hover:border-blue-200">
+                    تصميم ثلاثي الأبعاد
+                </button>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="mt-10 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Project Card 1 -->
+                <!-- <article
+                    class="project-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 opacity-100"
+                    data-category="3d">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-gray-900">
+                        <img src="assets/3d-design.jpg" alt="تصميم ثلاثي الأبعاد" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            alt="تصميم ثلاثي الأبعاد"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5 sm:p-6 flex flex-col gap-3">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                            تصميم ثنائي وثلاثي الأبعاد
+                        </h2>
+                        <p class="text-sm text-gray-500">
+                            Blender / Digital Art
+                        </p>
+                        <div class="mt-3">
+                            <button
+                                class="w-full inline-flex items-center justify-center gap-1 rounded-2xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-sm font-semibold px-4 py-2.5 transition-all duration-200">
+                                <span>عرض التفاصيل</span>
+                                <span class="text-base">&#8592;</span>
+                            </button>
+                        </div>
+                    </div>
+                </article> -->
+
+                <!-- Project Card 2 -->
+                <article
+                    class="project-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 opacity-100"
+                    data-category="vfx">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-gray-900">
+                        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=800&h=1000&fit=crop&q=80"
+                            alt="مؤثرات سينمائية"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute top-5 right-5">
+                        <span
+                            class="inline-block px-3 py-1 rounded-full bg-blue-600/70 text-white font-extrabold text-md font-medium mb-2">1000
+                            ج.م</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex flex-col gap-3">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                            مؤثرات سينمائية متحركة
+                        </h2>
+                        <p class="text-sm text-gray-500">
+                            After Effects / Cinema 4D
+                        </p>
+                        <div class="mt-3">
+                            <button
+                                class="w-full inline-flex items-center justify-center gap-1 rounded-2xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-sm font-semibold px-4 py-2.5 transition-all duration-200">
+                                <span>عرض التفاصيل</span>
+                                <span class="text-base">&#8592;</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article
+                    class="project-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 opacity-100"
+                    data-category="ar">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-gray-900">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&h=1000&fit=crop&q=80"
+                            alt="فلتر واقع معزز"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute top-5 right-5">
+                        <span
+                            class="inline-block px-3 py-1 rounded-full bg-blue-600/70 text-white font-extrabold text-md font-medium mb-2">1000
+                            ج.م</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex flex-col gap-3">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                            فلتر الواقع المعزز المعزِّز
+                        </h2>
+                        <p class="text-sm text-gray-500">
+                            Meta Spark / Lens Studio
+                        </p>
+                        <div class="mt-3">
+                            <button
+                                class="w-full inline-flex items-center justify-center gap-1 rounded-2xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-sm font-semibold px-4 py-2.5 transition-all duration-200">
+                                <span>عرض التفاصيل</span>
+                                <span class="text-base">&#8592;</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 4 -->
+                <article
+                    class="project-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 opacity-100"
+                    data-category="ar">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-gray-900">
+                        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=800&h=1000&fit=crop&q=80&sat=-50"
+                            alt="تجربة تفاعلية"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute top-5 right-5">
+                        <span
+                            class="inline-block px-3 py-1 rounded-full bg-blue-600/70 text-white font-extrabold text-md font-medium mb-2">1000
+                            ج.م</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex flex-col gap-3">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                            تجارب فنية رقمية تفاعلية
+                        </h2>
+                        <p class="text-sm text-gray-500">
+                            AR Interaction / Prototyping
+                        </p>
+                        <div class="mt-3">
+                            <button
+                                class="w-full inline-flex items-center justify-center gap-1 rounded-2xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-sm font-semibold px-4 py-2.5 transition-all duration-200">
+                                <span>عرض التفاصيل</span>
+                                <span class="text-base">&#8592;</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project Card 5 -->
+                <article
+                    class="project-card group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-gray-100 transition-all duration-300 transform hover:-translate-y-1 opacity-100"
+                    data-category="vfx">
+                    <div class="relative aspect-[4/5] overflow-hidden bg-gray-900">
+                        <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=800&h=1000&fit=crop&q=80&sat=50"
+                            alt="مؤثرات لوجو"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute top-5 right-5">
+                        <span
+                            class="inline-block px-3 py-1 rounded-full bg-blue-600/70 text-white font-extrabold text-md font-medium mb-2">1000
+                            ج.م</span>
+                    </div>
+                    <div class="p-5 sm:p-6 flex flex-col gap-3">
+                        <h2 class="text-lg sm:text-xl font-bold text-gray-900">
+                            مؤثرات بصرية لشعار العلامة
+                        </h2>
+                        <p class="text-sm text-gray-500">
+                            Motion Graphics / Logo Reveal
+                        </p>
+                        <div class="mt-3">
+                            <button
+                                class="w-full inline-flex items-center justify-center gap-1 rounded-2xl bg-blue-50 text-blue-700 hover:bg-blue-100 text-sm font-semibold px-4 py-2.5 transition-all duration-200">
+                                <span>عرض التفاصيل</span>
+                                <span class="text-base">&#8592;</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Empty state message when no projects match filter -->
+                <p id="no-projects-message"
+                    class="hidden col-span-full text-center text-gray-500 text-sm md:text-base py-10 rounded-3xl bg-white/60 border border-dashed border-gray-300">
+                    لا توجد فلاتر مناسبة لهذا التصنيف حالياً
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <!-- Logo -->
+            <a href="index.html#home" class="flex items-center gap-2 text-gray-900 font-bold">
+                <span
+                    class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white text-lg">ك</span>
+                الكوماندا
+            </a>
+            <!-- Social Media Icons -->
+            <div class="flex items-center gap-4">
+                <!-- WhatsApp -->
+                <a href="#" class="text-gray-500 hover:text-green-500 transition-colors" aria-label="واتساب">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
+                        <path
+                            d="M16.001 3.2c-7.07 0-12.801 5.732-12.801 12.801 0 2.257.597 4.46 1.728 6.395l-1.839 6.717 6.87-1.805c1.871 1.02 3.98 1.561 6.042 1.561h.001c7.068 0 12.799-5.73 12.799-12.799S23.067 3.2 16.001 3.2zm0 23.165c-1.824 0-3.687-.475-5.29-1.376l-.38-.216-4.083 1.073 1.086-3.972-.247-.408A10.721 10.721 0 013.801 16c0-6.782 5.416-12.199 12.2-12.199s12.199 5.417 12.199 12.199c0 6.784-5.416 12.2-12.199 12.2zm6.08-8.444c-.332-.168-1.961-.967-2.263-1.08-.303-.113-.524-.167-.746.168-.222.332-.854 1.08-1.048 1.303-.193.222-.385.25-.718.083-.332-.166-1.404-.517-2.676-1.648-.99-.883-1.659-1.974-1.857-2.305-.194-.332-.021-.511.146-.677.162-.162.332-.417.497-.625.167-.209.222-.361.332-.604.111-.242.055-.454-.026-.626-.084-.167-.746-1.808-1.022-2.474-.27-.649-.545-.561-.746-.572l-.634-.011c-.21 0-.551.079-.839.374-.287.294-1.098 1.073-1.098 2.618s1.125 3.033 1.283 3.246c.157.21 2.224 3.401 5.39 4.635.753.323 1.34.516 1.798.662.757.24 1.447.206 1.99.125.607-.091 1.961-.8 2.238-1.571.277-.77.277-1.431.194-1.573-.08-.138-.294-.222-.628-.39z">
+                        </path>
+                    </svg>
+                </a>
+                <!-- TikTok -->
+                <a href="#" class="text-gray-500 hover:text-black transition-colors" aria-label="تيك توك">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
+                        <path
+                            d="M29 9.5v4.26a10.39 10.39 0 01-5.55-1.64c-.26-.18-.5-.3-.76-.51V23c0 4.99-4.07 9-9.07 9S4.55 27.99 4.55 23 8.62 14 13.62 14c.45 0 .89.03 1.33.09V18a5 5 0 105 5v-6.78c2.44 1.62 5.19 2.53 8.05 2.53H29z">
+                        </path>
+                    </svg>
+                </a>
+                <!-- Facebook -->
+                <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors" aria-label="فيس بوك">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
+                        <path
+                            d="M29 16C29 8.82 23.18 3 16 3S3 8.82 3 16c0 6.66 5.07 12.17 11.5 12.93V20.26h-3.46V16h3.46v-2.89c0-3.41 2.02-5.28 5.12-5.28 1.48 0 3.03.27 3.03.27v3.33H20.6c-1.66 0-2.18 1.04-2.18 2.12V16h3.71l-.59 4.26h-3.12v8.67C23.93 28.17 29 22.66 29 16z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <!-- Rights Text -->
+            <p class="text-gray-600 text-sm text-center md:text-left">جميع الحقوق محفوظة بواسطة المطور | زياد محمد &
+                محمد طه 2026</p>
+        </div>
+    </footer>
+
+    <!-- زرار تواصل عائم على الموبايل - أسفل الشمال -->
+    <a href="https://wa.me/201030442397" target="_blank" rel="noopener"
+        class="fixed bottom-6 left-6 z-40 md:hidden cta-btn inline-flex items-center gap-2 px-5 py-3 rounded-full bg-blue-600 text-white font-semibold shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all duration-300">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        تواصل معي
+    </a>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
