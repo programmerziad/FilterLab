@@ -1,4 +1,10 @@
 /* Apply Cairo font globally */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
 body {
   font-family: "Cairo", sans-serif;
 }
@@ -9,6 +15,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+ul li .nav-link{
+  padding: 5px;
 }
 
 /* Smooth scroll behavior */
